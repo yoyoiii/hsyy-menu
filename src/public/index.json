@@ -1,0 +1,96 @@
+{
+    "MENU_TABS": [
+        {
+            "svg": "icon-roulei",
+            "category": "meat",
+            "desc": "肉肉"
+        },
+        {
+            "svg": "icon-shuichan",
+            "category": "seafood",
+            "desc": "鱼虾蟹"
+        },
+        {
+            "svg": "icon-shucai",
+            "category": "vegetable",
+            "desc": "蔬菜"
+        },
+        {
+            "svg": "icon-danlei",
+            "category": "eggs",
+            "desc": "蛋"
+        },
+        {
+            "svg": "icon-huoguo",
+            "category": "hotpot",
+            "desc": "火锅"
+        },
+        {
+            "svg": "icon-tianpin",
+            "category": "dessert",
+            "desc": "甜品"
+        }
+    ],
+    "MENU_LIST": [
+        {
+            "recipeid": "0001",
+            "title": "肉肉",
+            "thumb": "http://www.logoquan.com/upload/list/20180421/logoquan15259400209.PNG",
+            "category": "meat"
+        },
+        {
+            "recipeid": "0002",
+            "title": "水产品",
+            "thumb": "http://www.logoquan.com/upload/list/20180421/logoquan15259400209.PNG",
+            "category": "seafood"
+        },
+        {
+            "recipeid": "0003",
+            "title": "蔬菜菜",
+            "thumb": "http://www.logoquan.com/upload/list/20180421/logoquan15259400209.PNG",
+            "category": "vegetable"
+        },
+        {
+            "recipeid": "0004",
+            "title": "水产品222",
+            "thumb": "http://www.logoquan.com/upload/list/20180421/logoquan15259400209.PNG",
+            "category": "seafood"
+        },
+        {
+            "recipeid": "0005",
+            "title": "肉肉",
+            "thumb": "http://www.logoquan.com/upload/list/20180421/logoquan15259400209.PNG",
+            "category": "meat"
+        },
+        {
+            "recipeid": "0006",
+            "title": "水产品",
+            "thumb": "http://www.logoquan.com/upload/list/20180421/logoquan15259400209.PNG",
+            "category": "seafood"
+        },
+        {
+            "recipeid": "0007",
+            "title": "蔬菜菜",
+            "thumb": "http://www.logoquan.com/upload/list/20180421/logoquan15259400209.PNG",
+            "category": "vegetable"
+        },
+        {
+            "recipeid": "0008",
+            "title": "水产品222",
+            "thumb": "http://www.logoquan.com/upload/list/20180421/logoquan15259400209.PNG",
+            "category": "seafood"
+        },
+        {
+            "recipeid": "0009",
+            "title": "sdfa",
+            "thumb": "http://www.logoquan.com/upload/list/20180421/logoquan15259400209.PNG",
+            "category": "meat"
+        },
+        {
+            "recipeid": "0010",
+            "title": "火锅",
+            "thumb": "http://www.logoquan.com/upload/list/20180421/logoquan15259400209.PNG",
+            "category": "hotpot"
+        }
+    ]
+}

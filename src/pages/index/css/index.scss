@@ -1,0 +1,110 @@
+
+
+.recipe-container {
+    height: 100%;
+    .menu-tabs {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 600px;
+        margin: 40px auto 0;
+        display: flex;
+        flex-wrap: wrap;
+        .tab-item {
+            width: 120px;
+            margin-top: 5px;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+            text-decoration:none;
+            overflow: hidden;
+            -webkit-tap-highlight-color: transparent;
+            .svg-container {
+                transform: translateY(0);
+                transition: 0.5s ease-in-out all;
+                svg {
+                    width: 64px;
+                    height: 64px;
+                    margin: 0 auto;
+                }
+            }
+            .text-container {
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                margin: auto;
+                padding: 0 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transform: translateY(100%);
+                transition: 0.5s ease-in-out all;
+                span {
+                    display: block;
+                    font-size: 30px;
+                    color: #4c99ac;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+            &.active {
+                .svg-container {
+                    transform: translateY(-150%);
+                    transition: 0.5s ease-in-out all;
+                }
+                .text-container {
+                    transform: translateY(0);
+                    transition: 0.5s ease-in-out all;
+                    span {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+    }
+    .recipe-card {
+        width: 520px;
+        height: 800px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        margin: auto;
+        transform: -webkit-translateY(-50%);
+        transform: translateY(-50%);
+
+        @import './card.scss';
+        .swiper {
+            background: linear-gradient(270deg, rgba(247,249,255,1) 0%, rgba(242,246,255,1) 100%);
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            width: 100%;
+            position: relative;
+            height: 100%;
+            border-radius: 10px;
+            .slider-item {
+                opacity: 1;
+                .slider-image-wrapper {
+                    position: relative;
+                    width: 100%;
+                    padding-bottom: 100%;
+                    .slider-image {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                    }
+                }
+            }
+            .swiper-pagination {
+                z-index: 2;
+            }
+        }
+    }
+}

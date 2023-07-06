@@ -1,0 +1,51 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "3758948",
+      "name": "甜品",
+      "font_class": "tianpin",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "3758951",
+      "name": "火锅",
+      "font_class": "huoguo",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "3759001",
+      "name": "蛋类",
+      "font_class": "danlei",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "3759010",
+      "name": "肉类",
+      "font_class": "roulei",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "3759011",
+      "name": "水产",
+      "font_class": "shuichan",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "3759012",
+      "name": "蔬菜",
+      "font_class": "shucai",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    }
+  ]
+}
