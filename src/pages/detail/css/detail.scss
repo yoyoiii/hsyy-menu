@@ -1,6 +1,8 @@
 .recipe-detail-contaier {
+    min-height: 100%;
+    background: #f7f8fa;
     .recipe-header {
-        height: 480px;
+        height: 500px;
         position: relative;
         &::before {
             display: block;
@@ -24,17 +26,18 @@
         .recipe-title {
             position: relative;
             z-index: 3;
-            color: #fff;
+            color: #f7f8fa;
             font-size: 36px;
             padding-top: 120px;
             margin: auto 30px;
             font-weight: bold;
+            letter-spacing: 10px;
         }
         .recipe-tabs {
             position: absolute;
             left: 0;
             right: 0;
-            bottom: 0;
+            bottom: 20px;
             margin: auto;
             z-index: 3;
             background: rgba(0,0,0,0.25);
@@ -42,27 +45,28 @@
             justify-content: space-between;
             li {
                 width: 33.3%;
-                color: #ccc;
+                color: #ddd;
                 line-height: 72px;
                 font-size: 30px;
                 text-align: center;
                 position: relative;
+                letter-spacing: 2px;
+                &::after {
+                    display: block;
+                    height: 20px;
+                    background: #f7f8fa;
+                    position: absolute;
+                    bottom: -20px;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                }
                 &.active {
-                    color: #fff;
+                    color: #f7f8fa;
                     font-weight: bold;
-                    &::before {
-                        display: block;
-                        position: absolute;
-                        left: 0;
-                        right: 0;
-                        bottom: -40px;
-                        margin: auto;
-                        width: 0;
-                        height: 0;
-                        border-top: 20px solid rgba(0,0,0,0.4);
-                        border-left: 20px solid transparent;
-                        border-right: 20px solid transparent;
-                        border-bottom: 20px solid transparent;
+                    &::after {
+                        background: conic-gradient(from 0 at 50% 100%, transparent -45deg 45deg, #f7f8fa 45deg 315deg, transparent 315deg 0deg);
+                        transition: all .4s linear;
                     }
                 }
             }
@@ -70,5 +74,71 @@
     }
     .recipe-main {
         margin: 50px 30px 0;
+        .recipe-main-content {
+            .subtit {
+                font-size: 40px;
+                font-weight: bold;
+                margin-bottom: 25px;
+            }
+            .recipe-main-ul {
+                width: 100%;
+                li {
+                    font-size: 30px;
+                }
+                li.li-ingredient {
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    span {
+                        display: block;
+                        line-height: 52px;
+                        &.dashed {
+                            width: 100%;
+                            height: 2px;
+                            border-top: 2px dotted #666666;
+                            flex: 1;
+                        }
+                        &:first-child {
+                            margin-right: 20px;
+                        }
+
+                        &:last-child {
+                            text-align: right;
+                            margin-left: 20px;
+                        }
+                    }
+
+
+                }
+                li.li-step {
+                    display: flex;
+                    align-items: flex-start;
+                    position: relative;
+                    margin-bottom: 20px;
+                    span {
+                        line-height: 1.5;
+                    }
+                    .icon-step {
+                        display: block;
+                        width: 46px;
+                        height: 46px;
+                        border-radius: 50%;
+                        border: 2px solid lightpink;
+                        margin-right: 30px;
+                        flex: 0 0 auto;
+                        position: relative;
+                        font-style: normal;
+                        text-align: center;
+                        line-height: 46px;
+                        font-size: 24px;
+                        font-weight: bold;
+                    }
+                    &:nth-child(n) {
+
+
+                    }
+                }
+            }
+        }
     }
 }
