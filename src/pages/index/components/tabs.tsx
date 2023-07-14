@@ -10,7 +10,7 @@ export default function Tabs({ tabs, getIndex }) {
   }
 
   return (
-    <ul className="menu-tabs">
+    <ul className="recipe-tabs">
       {tabs.map((tab, index) => (
         <li className={index == selected ? 'tab-item active': 'tab-item'} key={tab.category} data-index={index} onClick={() => handleClick(index)}>
           <div className="svg-container">

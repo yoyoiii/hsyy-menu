@@ -15,6 +15,7 @@ export default function List({ tabs, list }) {
     return (
         <div className="recipe-card">
             <Swiper
+                className="recipe-card-swiper"
                 modules={[Pagination, EffectCards]}
                 pagination = {{
                     clickable: true,

@@ -2,7 +2,7 @@
 
 .recipe-container {
     height: 100%;
-    .menu-tabs {
+    .recipe-tabs {
         position: absolute;
         top: 0;
         left: 0;
@@ -76,15 +76,15 @@
         position: absolute;
         left: 0;
         right: 0;
-        top: 50%;
+        top: 48%;
         margin: auto;
         transform: -webkit-translateY(-50%);
         transform: translateY(-50%);
 
         @import './card.scss';
-        .swiper {
-            background: linear-gradient(270deg, rgba(247,249,255,1) 0%, rgba(242,246,255,1) 100%);
-            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        .recipe-card-swiper {
+            // background: linear-gradient(270deg, rgba(247,249,255,1) 0%, rgba(242,246,255,1) 100%);
+            // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
             width: 100%;
             position: relative;
             height: 100%;
@@ -104,6 +104,7 @@
             }
             .swiper-pagination {
                 z-index: 2;
+                bottom: -50px;
             }
         }
     }
