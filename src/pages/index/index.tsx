@@ -39,7 +39,7 @@ export default function Index() {
 
   return (
     <div className='recipe-container'>
-      {/* <Tabs tabs={tabs} getIndex={getShowIndex}></Tabs> */}
+      <Tabs tabs={tabs} getIndex={getShowIndex}></Tabs>
       <List tabs={tabs} list={list}></List>
     </div>
   )

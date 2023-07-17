@@ -1,24 +1,19 @@
 {
     "MENU_TABS": [
         {
-            "svg": "icon-roulei",
+            "svg": "icon-rou",
             "category": "meat",
-            "desc": "肉肉"
+            "desc": "Meat"
         },
         {
-            "svg": "icon-shuichan",
+            "svg": "icon-yu",
             "category": "seafood",
-            "desc": "鱼虾蟹"
+            "desc": "Seafood"
         },
         {
-            "svg": "icon-shucai",
+            "svg": "icon-huayecai",
             "category": "vegetable",
-            "desc": "蔬菜"
-        },
-        {
-            "svg": "icon-danlei",
-            "category": "eggs",
-            "desc": "蛋"
+            "desc": "Vegetable"
         },
         {
             "svg": "icon-huoguo",
@@ -26,9 +21,9 @@
             "desc": "火锅"
         },
         {
-            "svg": "icon-tianpin",
+            "svg": "icon-tiandian",
             "category": "dessert",
-            "desc": "甜品"
+            "desc": "Dessert"
         }
     ],
     "MENU_LIST": [
@@ -112,9 +107,9 @@
         },
         {
             "recipeid": "0010",
-            "title": "火锅",
+            "title": "半熟芝士",
             "thumb": "http://www.logoquan.com/upload/list/20180421/logoquan15259400209.PNG",
-            "category": "hotpot"
+            "category": "dessert"
         }
     ]
 }

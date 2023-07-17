@@ -3,18 +3,19 @@
 .recipe-container {
     height: 100%;
     .recipe-tabs {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
         position: absolute;
-        top: 0;
         left: 0;
         right: 0;
-        width: 600px;
-        margin: 40px auto 0;
-        display: flex;
-        flex-wrap: wrap;
+        top: 50%;
+        margin: auto;
+        transform: -webkit-translateY(-480px);
+        transform: translateY(-480px);
         .tab-item {
-            width: 120px;
-            margin-top: 5px;
-            padding: 10px 0;
+            // width: 120px;
+            margin: 0 20px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -24,47 +25,45 @@
             text-decoration:none;
             overflow: hidden;
             -webkit-tap-highlight-color: transparent;
-            .svg-container {
-                transform: translateY(0);
-                transition: 0.5s ease-in-out all;
-                svg {
-                    width: 64px;
-                    height: 64px;
-                    margin: 0 auto;
-                }
+            padding: 6px;
+            border: 1px solid #666;
+            border-radius: 30px;
+            svg.icon {
+                position: relative;
+                visibility: visible;
+                opacity: 1;
+                width: 42px;
+                height: 42px;
+                margin: 0 auto;
+                display: block;
+                transition: all 0.3s ease-out 0.3s;
             }
-            .text-container {
+            span.desc {
+                padding: 0 18px;
                 position: absolute;
-                left: 0;
-                top: 0;
-                bottom: 0;
-                right: 0;
-                margin: auto;
-                padding: 0 10px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transform: translateY(100%);
-                transition: 0.5s ease-in-out all;
-                span {
-                    display: block;
-                    font-size: 30px;
-                    color: #4c99ac;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
+                visibility: hidden;
+                opacity: 0;
+                font-size: 28px;
+                line-height: 42px;
+                color: #4c99ac;
+                font-weight: bold;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                transition: all 0.1s ease-out;
             }
             &.active {
-                .svg-container {
-                    transform: translateY(-150%);
-                    transition: 0.5s ease-in-out all;
+                svg.icon {
+                    position: absolute;
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: all 0.2s ease-out;
                 }
-                .text-container {
-                    transform: translateY(0);
-                    transition: 0.5s ease-in-out all;
-                    span {
-                        font-weight: bold;
-                    }
+                span.desc {
+                    position: relative;
+                    visibility: visible;
+                    opacity: 1;
+                    display: block;
+                    transition: all 0.3s ease-out 0.2s;
                 }
             }
         }
@@ -76,7 +75,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        top: 48%;
+        top: 50%;
         margin: auto;
         transform: -webkit-translateY(-50%);
         transform: translateY(-50%);
@@ -99,6 +98,38 @@
                         position: absolute;
                         left: 0;
                         top: 0;
+                    }
+                    img[src=""], img:not([src]){
+                        opacity:0;
+                    }
+                }
+                .slider-item-content {
+                    padding-top: 30px;
+                    padding-bottom: 50px;
+                    h3 {
+                        font-size: 30px;
+                    }
+                    p {
+                        font-size: 28px;
+                        margin-top: 10px;
+                        line-height: 1.3;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 3;
+                    }
+                    span.more {
+                        display: block;
+                        font-size: 30px;
+                        line-height: 1;
+                        position: absolute;
+                        bottom: 46px;
+                        left: 30px;
+                        color: #4c99ac;
+                        border: 1px solid #4c99ac;
+                        border-radius: 4px;
+                        padding: 6px 12px;
                     }
                 }
             }

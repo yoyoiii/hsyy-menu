@@ -16,12 +16,13 @@ export default function Card({ recipe }) {
     return (
         <>
             <div className="slider-image-wrapper">
-                <img className="slider-image" src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2600&q=80" alt="SliderImg" />
-                </div>
+                <img className="slider-image swiper-lazy" data-src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2600&q=80" alt=" " />
+                <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            </div>
             <div className="slider-item-content">
-                <h1>Postcards From Italy</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                <span data-recipeid={recipe.recipeid} onClick={handleClick}>more detail</span>
+                <h3>这是一个菜名</h3>
+                <p>这是一句描述</p>
+                <span className="more" data-recipeid={recipe.recipeid} onClick={handleClick}>More Detail</span>
             </div>
         </>
     )

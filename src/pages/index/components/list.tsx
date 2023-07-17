@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useLoad } from '@tarojs/taro'
 import 'swiper/swiper-bundle.min.css'
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react'
-import { Pagination, EffectCards } from 'swiper'
+import { Pagination, EffectCards, Lazy } from 'swiper'
 import Card from './card'
 
 export default function List({ tabs, list }) {
@@ -16,11 +16,15 @@ export default function List({ tabs, list }) {
         <div className="recipe-card">
             <Swiper
                 className="recipe-card-swiper"
-                modules={[Pagination, EffectCards]}
+                modules={[Pagination, EffectCards, Lazy]}
                 pagination = {{
                     clickable: true,
                 }}
                 effect="cards"
+                lazy={{
+                    // loadPrevNext: true,
+                    loadOnTransitionStart: true,
+                }}
             >
                 {tabs.map((tab) => (
                     list[tab.category].map((recipe, index) => (
