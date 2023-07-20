@@ -1,7 +1,5 @@
 import './css/index.scss'
-import '../../public/iconfont/iconfont'
 import { useState } from "react";
-import { View } from '@tarojs/components'
 import { useLoad } from '@tarojs/taro'
 import Tabs from './components/tabs'
 import List from './components/list'
@@ -31,15 +29,10 @@ export default function Index() {
     console.log('Page(Preview) loaded.')
   })
 
-  const [index, setIndex] = useState(0)
-
-  const getShowIndex = (val) => {
-    setIndex(val)
-  }
 
   return (
     <div className='recipe-container'>
-      <Tabs tabs={tabs} getIndex={getShowIndex}></Tabs>
+      <Tabs tabs={tabs}></Tabs>
       <List tabs={tabs} list={list}></List>
     </div>
   )

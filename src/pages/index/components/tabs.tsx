@@ -1,24 +1,29 @@
 import { useState } from "react";
 import { View } from '@tarojs/components'
-
-export default function Tabs({ tabs, getIndex }) {
+import Taro from '@tarojs/taro'
+export default function Tabs({ tabs }) {
 
   const [selected, setSelected] = useState(0)
-  const handleClick = (index) => {
+  const handleClick = (index, category) => {
     setSelected(index)
-    getIndex(index)
+    // const activeList: any = document.getElementById(`Category_${category}`)
+    // activeList.scrollIntoView({ behavior: "smooth" })
+
+    Taro.pageScrollTo({
+        // scrollTop: 0,
+        selector: `#Category_${category}`,
+        duration: 500
+    })
   }
 
   return (
-    <ul className="recipe-tabs">
+    <div className="recipe-tabs">
       {tabs.map((tab, index) => (
-        <li className={index == selected ? 'tab-item active': 'tab-item'} key={tab.category} data-index={index} onClick={() => handleClick(index)}>
-          <svg className="icon" aria-hidden="true">
-            <use xlinkHref={'#' + tab.svg}></use>
-          </svg>
+        <li className={index == selected ? 'tab-item active' : 'tab-item'} key={tab.category} data-index={index} onClick={() => handleClick(index, tab.category)}>
+          <span className="icon">{tab.icon}</span>
           <span className="desc">{tab.desc}</span>
         </li>
       ))}
-    </ul>
+    </div>
   )
 }

@@ -1,141 +1,106 @@
-
-
 .recipe-container {
     height: 100%;
+    padding-left: 180px;
     .recipe-tabs {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        position: absolute;
+        position: fixed;
         left: 0;
-        right: 0;
-        top: 50%;
+        top: 0;
+        bottom: 0;
         margin: auto;
-        transform: -webkit-translateY(-480px);
-        transform: translateY(-480px);
-        .tab-item {
-            // width: 120px;
-            margin: 0 20px;
+        width: 180px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0 0 12px;
+        li {
+            height: 120px;
+            padding: 20px 0;
             display: flex;
-            align-items: center;
             justify-content: center;
-            text-align: center;
-            cursor: pointer;
-            position: relative;
-            text-decoration:none;
-            overflow: hidden;
-            -webkit-tap-highlight-color: transparent;
-            padding: 6px;
-            border: 1px solid #666;
-            border-radius: 30px;
-            svg.icon {
-                position: relative;
-                visibility: visible;
+            align-items: center;
+            .icon {
                 opacity: 1;
-                width: 42px;
-                height: 42px;
+                transition: all 0.4s ease 0.2s;
+                width: 64px;
+                height: 64px;
                 margin: 0 auto;
                 display: block;
-                transition: all 0.3s ease-out 0.3s;
+                font-size: 40px;
             }
-            span.desc {
-                padding: 0 18px;
+            .desc {
                 position: absolute;
-                visibility: hidden;
-                opacity: 0;
-                font-size: 28px;
+                transform: translateX(-200%);
+                transition: all 0.4s ease;
+                font-size: 30px;
                 line-height: 42px;
                 color: #4c99ac;
                 font-weight: bold;
                 overflow: hidden;
                 text-overflow: ellipsis;
-                transition: all 0.1s ease-out;
             }
             &.active {
-                svg.icon {
-                    position: absolute;
-                    visibility: hidden;
+                box-shadow: rgba(149, 157, 165, 0.2) 0 0 12px;
+                .icon {
                     opacity: 0;
-                    transition: all 0.2s ease-out;
+                    transition: all 0.4s ease;
                 }
-                span.desc {
-                    position: relative;
-                    visibility: visible;
-                    opacity: 1;
-                    display: block;
-                    transition: all 0.3s ease-out 0.2s;
+                .desc {
+                    transform: translateX(0);
+                    transition: all 0.4s ease;
                 }
             }
         }
-
     }
-    .recipe-card {
-        width: 520px;
-        height: 800px;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 50%;
-        margin: auto;
-        transform: -webkit-translateY(-50%);
-        transform: translateY(-50%);
-
-        @import './card.scss';
-        .recipe-card-swiper {
-            // background: linear-gradient(270deg, rgba(247,249,255,1) 0%, rgba(242,246,255,1) 100%);
-            // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-            width: 100%;
-            position: relative;
-            height: 100%;
-            border-radius: 10px;
-            .slider-item {
-                opacity: 1;
-                .slider-image-wrapper {
-                    position: relative;
+    .recipe-ul {
+        overflow: hidden;
+        li {
+            margin: 40px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: linear-gradient(270deg, rgba(247,249,255,1) 0%, rgba(242,246,255,1) 100%);
+            .image-wrapper {
+                position: relative;
+                width: 100%;
+                padding-bottom: 66.7%;
+                img {
                     width: 100%;
-                    padding-bottom: 100%;
-                    .slider-image {
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                    }
-                    img[src=""], img:not([src]){
-                        opacity:0;
-                    }
+                    height: 100%;
+                    object-fit: cover;
+                    transition: .2s;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
                 }
-                .slider-item-content {
-                    padding-top: 30px;
-                    padding-bottom: 50px;
-                    h3 {
-                        font-size: 30px;
-                    }
-                    p {
-                        font-size: 28px;
-                        margin-top: 10px;
-                        line-height: 1.3;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        display: -webkit-box;
-                        -webkit-box-orient: vertical;
-                        -webkit-line-clamp: 3;
-                    }
-                    span.more {
-                        display: block;
-                        font-size: 30px;
-                        line-height: 1;
-                        position: absolute;
-                        bottom: 46px;
-                        left: 30px;
-                        color: #4c99ac;
-                        border: 1px solid #4c99ac;
-                        border-radius: 4px;
-                        padding: 6px 12px;
-                    }
+                img[src=""], img:not([src]){
+                    opacity:0;
                 }
             }
-            .swiper-pagination {
-                z-index: 2;
-                bottom: -50px;
+            .item-content {
+                padding: 30px 20px;
+                position: relative;
+                h3 {
+                    font-size: 30px;
+                }
+                p {
+                    font-size: 28px;
+                    margin-top: 10px;
+                    line-height: 1.3;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 3;
+                    color: #666;
+                }
+                span.more {
+                    display: block;
+                    font-size: 30px;
+                    line-height: 1;
+                    position: absolute;
+                    bottom: 46px;
+                    left: 30px;
+                    color: #4c99ac;
+                    border: 1px solid #4c99ac;
+                    border-radius: 4px;
+                    padding: 6px 12px;
+                }
             }
         }
     }

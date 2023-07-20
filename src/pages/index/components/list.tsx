@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useLoad } from '@tarojs/taro'
 import 'swiper/swiper-bundle.min.css'
-import { Swiper, SwiperSlide } from 'swiper/react/swiper-react'
-import { Pagination, EffectCards, Lazy } from 'swiper'
 import Card from './card'
 
 export default function List({ tabs, list }) {
@@ -13,27 +11,14 @@ export default function List({ tabs, list }) {
     })
 
     return (
-        <div className="recipe-card">
-            <Swiper
-                className="recipe-card-swiper"
-                modules={[Pagination, EffectCards, Lazy]}
-                pagination = {{
-                    clickable: true,
-                }}
-                effect="cards"
-                lazy={{
-                    // loadPrevNext: true,
-                    loadOnTransitionStart: true,
-                }}
-            >
-                {tabs.map((tab) => (
-                    list[tab.category].map((recipe, index) => (
-                        <SwiperSlide className="slider-item" data-recipeid={recipe.recipeid} data-category={tab.category}>
-                            <Card recipe={recipe}></Card>
-                        </SwiperSlide>
-                    ))
-                ))}
-            </Swiper>
+        <div className="recipe-list">
+            {tabs.map(tab => (
+                <ul key={tab.category} className="recipe-ul" id={"Category_" + tab.category}>
+                    {list[tab.category].map(recipe => (
+                        <Card key={recipe.recipeid} recipe={recipe}></Card>
+                    ))}
+                </ul>
+            ))}
         </div>
     )
 }
