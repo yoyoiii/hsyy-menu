@@ -30,8 +30,8 @@ export default function Detail() {
   return (
     <div className='recipe-detail-contaier'>
       <div className="recipe-header">
-        <img className='recipe-cover' src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2600&q=80" alt="" />
-        <div className="recipe-title">这个是菜名</div>
+        <img className='recipe-cover' src={require(`../../image/${recipe.recipeid}.jpg`)} alt="" />
+        <div className="recipe-title">{recipe.title}</div>
         <ul className="recipe-detail-tabs">
           <li className={selected == 0 ? 'active': ''} onClick={() => handleClick(0)}>Ingredients</li>
           <li className={selected == 1 ? 'active': ''} onClick={() => handleClick(1)}>Steps</li>

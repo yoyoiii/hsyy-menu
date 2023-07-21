@@ -29,11 +29,16 @@ export default function Index() {
     console.log('Page(Preview) loaded.')
   })
 
+  const [activeTab, setActiveTab] = useState("")
+
+  const handleActive = (type) => {
+    setActiveTab(type)
+  }
 
   return (
     <div className='recipe-container'>
-      <Tabs tabs={tabs}></Tabs>
-      <List tabs={tabs} list={list}></List>
+        <Tabs tabs={tabs} activeTab={activeTab} handleActive={handleActive}></Tabs>
+        <List tabs={tabs} list={list} handleActive={handleActive}></List>
     </div>
   )
 }

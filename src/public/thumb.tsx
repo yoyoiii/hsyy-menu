@@ -1,0 +1,1 @@
+export { default as address } from '../image/0001.jpg'
