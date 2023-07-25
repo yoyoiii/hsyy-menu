@@ -3,8 +3,9 @@ import { useLoad } from '@tarojs/taro'
 import 'swiper/swiper-bundle.min.css'
 import SubList from './sublist'
 
-export default function List({ tabs, list, handleActive }) {
+export default function List(props) {
 
+    const { tabs, list, handleActive, tabIsSelected } = props
 
     useLoad(() => {
 
@@ -18,7 +19,7 @@ export default function List({ tabs, list, handleActive }) {
     return (
         <div className="recipe-list">
             {tabs.map(tab => (
-                <SubList key={tab.category} list={list} category={tab.category} handleActive={handleActive}></SubList>
+                <SubList key={tab.category} list={list} category={tab.category} handleActive={handleActive} tabIsSelected={tabIsSelected}></SubList>
             ))}
         </div>
     )

@@ -2,9 +2,11 @@ import { useState, useRef, useEffect } from "react";
 import Taro, { useLoad } from '@tarojs/taro'
 import 'swiper/swiper-bundle.min.css'
 import Card from './card'
+import { useIntersectionObserver } from './useIntersectionObserver'
 
-export default function SubList({ list, category, handleActive }) {
+export default function SubList(props) {
 
+    const { list, category, handleActive, tabIsSelected } = props
 
     useLoad(() => {
 
@@ -15,23 +17,17 @@ export default function SubList({ list, category, handleActive }) {
     // console.log(images)
 
     const ref = useRef(null)
+    const intersectingEntry = useIntersectionObserver(ref, {
+        root: document.querySelector('.taro_page'),
+        rootMargin: "-40% 0px -40% 0px"
+    })
 
     useEffect(() => {
-        const sl: any = ref.current;
-        const observer = new IntersectionObserver(entries => {
-          const entry = entries[0];
-
-            if (entry.isIntersecting) {
-                const type = entry.target.getAttribute("data-type")
-                handleActive(type)
-            }
-        });
-        observer.observe(sl);
-
-        return () => {
-          observer.disconnect();
-        }
-    }, [ref]);
+        if (intersectingEntry && !tabIsSelected) {
+            const type = intersectingEntry.target.getAttribute("data-type")
+            handleActive(type)
+         }
+    }, [intersectingEntry])
 
     return (
         <ul className="recipe-ul" data-type={category} id={"Category_" + category} ref={ref}>
