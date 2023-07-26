@@ -1,9 +1,9 @@
-// import { useState } from "react";
 import { useLoad } from '@tarojs/taro'
 import 'swiper/swiper-bundle.min.css'
 import SubList from './sublist'
+import { useIntersectionObserver } from './useIntersectionObserver'
 
-export default function List(props) {
+export default function ListH5(props) {
 
     const { tabs, list, handleActive, tabIsSelected } = props
 
