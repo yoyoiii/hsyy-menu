@@ -75,6 +75,8 @@
     .recipe-main {
         margin: 50px 40px 0;
         .recipe-main-content {
+            padding-bottom: 50px;
+            box-sizing: border-box;
             .subtit {
                 font-size: 40px;
                 font-weight: bold;
@@ -137,15 +139,34 @@
                 }
             }
             .links-detail {
-                display: flex;
-                align-items: center;
-                font-size: 28px;
-                a {
-                    font-size: 32px;
-                    color: lightseagreen;
-                    margin-left: 10px;
-                    -webkit-tap-highlight-color: transparent;
+                font-size: 30px;
+                white-space: pre-wrap;
+                word-break: break-all;
+                color: lightseagreen;
+            }
+            .copy-btn {
+                margin-top: 20px;
+                font-size: 30px;
+                line-height: 48px;
+                color: #666;
+                display: inline-block;
+                position: relative;
+                &::before {
+                    content: "";
+                    display: block;
+                    height: 1px;
+                    border-bottom: 1px dotted #666;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    margin: auto;
                 }
+            }
+            .link-input {
+                position: fixed;
+                left: -999px;
+                top: -999px;
             }
         }
     }

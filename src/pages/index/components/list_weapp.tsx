@@ -1,5 +1,13 @@
 import { useState, useEffect, useRef } from "react";
-import Taro, { useLoad } from '@tarojs/taro'
+import {
+    useLoad,
+    getWindowInfo,
+    getCurrentPages,
+    createSelectorQuery,
+    createIntersectionObserver,
+    stopPullDownRefresh,
+    usePullDownRefresh
+} from '@tarojs/taro'
 import 'swiper/swiper-bundle.min.css'
 import Card from './card'
 
@@ -7,19 +15,19 @@ export default function List(props) {
 
     const { tabs, list, handleActive, tabIsSelected } = props
 
-    const windowHeight = Taro.getWindowInfo()?.windowHeight || 0
+    const windowHeight = getWindowInfo()?.windowHeight || 0
     const [itemHeight, setItemHeight] = useState(0)
     const ref: any = useRef(null)
 
     const getCurrentPage = () => {
-        const pages = Taro.getCurrentPages ? Taro.getCurrentPages() : [{}]
+        const pages = getCurrentPages ? getCurrentPages() : [{}]
         const currentPage = pages[pages.length - 1]
         return currentPage
     }
 
     useLoad(() => {
         setTimeout(() => {
-            const query = Taro.createSelectorQuery()
+            const query = createSelectorQuery()
             query.select('.recipe-item').boundingClientRect((res: any) => {
                 setItemHeight(res?.height)
             }).exec()
@@ -27,7 +35,7 @@ export default function List(props) {
     })
 
     useEffect(() => {
-        const observer = Taro.createIntersectionObserver(getCurrentPage(), {
+        const observer = createIntersectionObserver(getCurrentPage(), {
             thresholds: [0], observeAll: true
         }).relativeToViewport({
             bottom: itemHeight - windowHeight

@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect } from "react";
-import Taro, { useLoad } from '@tarojs/taro'
+import { useRef, useEffect } from "react";
+import { useLoad, getWindowInfo } from '@tarojs/taro'
 import 'swiper/swiper-bundle.min.css'
 import Card from './card'
 
@@ -7,7 +7,7 @@ export default function SubList(props) {
 
     const { list, category, handleActive, tabIsSelected } = props
 
-    const windowHeight = Taro.getWindowInfo()?.windowHeight || 0
+    const windowHeight = getWindowInfo()?.windowHeight || 0
     const ref = useRef(null)
 
     useLoad(() => {

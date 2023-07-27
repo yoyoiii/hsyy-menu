@@ -1,6 +1,6 @@
 // import { useState, useContext } from "react";
 // import { View } from '@tarojs/components'
-import Taro from '@tarojs/taro'
+import { pageScrollTo } from '@tarojs/taro'
 export default function Tabs(props) {
 
   const { tabs, activeTab, handleActive, setTabIsSelected } = props
@@ -9,7 +9,7 @@ export default function Tabs(props) {
     handleActive(category)
     setTabIsSelected(true)
 
-    Taro.pageScrollTo({
+    pageScrollTo({
       // scrollTop: 0,
       selector: `#Category_${category}`,
       duration: 500,

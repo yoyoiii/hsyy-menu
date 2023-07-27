@@ -1,12 +1,15 @@
 import './css/index.scss'
 import { useState } from "react";
-import Taro, { useLoad } from '@tarojs/taro'
+import {
+  useLoad,
+  getEnv
+} from '@tarojs/taro'
 import Tabs from './components/tabs'
 import ListH5 from './components/list_h5'
 import ListWe from './components/list_weapp'
 import data from '../../public/index.json'
 
-const ENV_TYPE = Taro.getEnv()?.toUpperCase();
+const ENV_TYPE = getEnv()?.toUpperCase();
 
 export default function Index() {
 

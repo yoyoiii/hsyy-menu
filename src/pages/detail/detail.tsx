@@ -1,6 +1,6 @@
 import './css/detail.scss'
 import { useState } from "react";
-import { View } from '@tarojs/components'
+import { Image } from '@tarojs/components'
 import { useLoad, useRouter } from '@tarojs/taro'
 import Ingredients from './components/ingredients'
 import Steps from './components/steps'
@@ -30,7 +30,7 @@ export default function Detail() {
   return (
     <div className='recipe-detail-contaier'>
       <div className="recipe-header">
-        <img className='recipe-cover' src={require(`../../image/${recipe.recipeid}.jpg`)} alt="" />
+        <Image className='recipe-cover' src={require(`../../image/${recipe.recipeid}.jpg`)} mode="aspectFill" />
         <div className="recipe-title">{recipe.title}</div>
         <ul className="recipe-detail-tabs">
           <li className={selected == 0 ? 'active': ''} onClick={() => handleClick(0)}>Ingredients</li>

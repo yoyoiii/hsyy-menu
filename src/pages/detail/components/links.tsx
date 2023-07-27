@@ -1,13 +1,32 @@
-import { useState } from "react";
-import { View } from '@tarojs/components'
+import {
+  setClipboardData,
+  getClipboardData,
+} from '@tarojs/taro'
 
 export default function Links({ link }) {
+
+  const handleClick = () => {
+    setClipboardData({
+      data: link,
+      success: function () {
+        getClipboardData({
+          success: function (res) {
+            // console.log(res.data)
+          }
+        })
+      }
+    })
+  }
 
   return (
     <div id="Links" className="recipe-main-content">
       {
         link
-          ? <p className="links-detail">🔗<a href={link} target="_blank">传送门</a></p>
+          ?
+          <div>
+            <p className="links-detail">{link}</p>
+            <span className="copy-btn" onClick={handleClick}>点击复制链接到剪切板</span>
+          </div>
           : <div className="no-data">暂无数据</div>
       }
     </div>

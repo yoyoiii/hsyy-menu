@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import Taro from '@tarojs/taro'
 
 export function useIntersectionObserver(ref: any, options: any = {}, dependencies: any = []) {
     const [intersectingEntry, setIntersectingEntry]: any = useState(null)
