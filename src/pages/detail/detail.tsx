@@ -30,7 +30,8 @@ export default function Detail() {
   return (
     <div className='recipe-detail-contaier'>
       <div className="recipe-header">
-        <Image className='recipe-cover' src={require(`../../image/${recipe.recipeid}.jpg`)} mode="aspectFill" />
+        {/* <Image className='recipe-cover' src={require(`../../image/${recipe.recipeid}.jpg`)} mode="aspectFill" /> */}
+        <Image className='recipe-cover' src={recipe.thumb} mode="aspectFill" />
         <div className="recipe-title">{recipe.title}</div>
         <ul className="recipe-detail-tabs">
           <li className={selected == 0 ? 'active': ''} onClick={() => handleClick(0)}>Ingredients</li>

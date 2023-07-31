@@ -5,8 +5,6 @@ import {
     getCurrentPages,
     createSelectorQuery,
     createIntersectionObserver,
-    stopPullDownRefresh,
-    usePullDownRefresh
 } from '@tarojs/taro'
 import 'swiper/swiper-bundle.min.css'
 import Card from './card'

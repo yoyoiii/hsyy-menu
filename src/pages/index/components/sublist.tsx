@@ -14,10 +14,6 @@ export default function SubList(props) {
 
     })
 
-    // const requireContext = require.context("../../../image", true, /^\.\/.*\.jpg|\.jpeg|\.png$/)
-    // const images: any = requireContext.keys().map(requireContext)
-    // console.log(images)
-
     useEffect(() => {
         const div: any = ref.current;
         const observer = new IntersectionObserver(entries => {

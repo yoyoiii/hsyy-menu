@@ -1,5 +1,8 @@
-import { useState, useRef, useEffect } from "react";
-import { useLoad, navigateTo } from '@tarojs/taro'
+import { useRef } from "react";
+import {
+    useLoad,
+    navigateTo,
+} from '@tarojs/taro'
 import { Image } from '@tarojs/components'
 
 export default function Card({ recipe }) {
@@ -16,15 +19,11 @@ export default function Card({ recipe }) {
 
     })
 
-    useEffect(() => {
-
-    })
-
     return (
         <li className="recipe-item" data-recipeid={recipe.recipeid} onClick={(e) => handleClick(e, recipe.recipeid)}>
             <div className="image-wrapper" ref={ref}>
-                {/* <img src={require("../../../image/" + recipe.recipeid + ".jpg")} alt="" /> */}
-                <Image className="thumb" src={require(`../../../image/${recipe.recipeid}.jpg`)} mode="aspectFill" />
+                {/* <Image className="thumb" src={require(`../../../image/${recipe.recipeid}.jpg`)} mode="aspectFill" /> */}
+                <Image className="thumb" src={recipe.thumb} mode="aspectFill" defaultSource="" lazyLoad fadeIn />
             </div>
             <div className="item-content">
                 <h3>{recipe.title}</h3>

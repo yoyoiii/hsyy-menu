@@ -1,7 +1,10 @@
 import {
   setClipboardData,
   getClipboardData,
+  getEnv
 } from '@tarojs/taro'
+
+const ENV_TYPE = getEnv()?.toUpperCase();
 
 export default function Links({ link }) {
 
@@ -25,7 +28,11 @@ export default function Links({ link }) {
           ?
           <div>
             <p className="links-detail">{link}</p>
-            <span className="copy-btn" onClick={handleClick}>点击复制链接到剪切板</span>
+            {
+              ENV_TYPE == "WEAPP"
+                ? <span className="copy-btn" onClick={handleClick}>点击复制链接到剪切板</span>
+                : null
+            }
           </div>
           : <div className="no-data">暂无数据</div>
       }
